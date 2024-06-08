@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .contentsClass {
+            margin-left:10%;
+            margin-top: 1%;
+            width: 70em;
+        }
+
+        .controlAreaClass {
+            margin-left: 0.1em;
+            font-size: 0.6em;
+            width: 5%;
+            float: left;
+        }
+
+        .playAreaClass {
+            margin-bottom: 4px;
+            font-family: kaiti, SimSun, serif;
+            font-weight:bold;
+            width: 75%;
+            float: left;
+        }
+
+        .inputAreaClass {
+            display:block;
+            width:50%;
+            margin-left:10%;
+        }
+
+        .inputListClass {
+            font-family: kaiti, serif;
+            font-size: 1.6em;
+        }
+
+        .twoletters {
+            letter-spacing: 0.2em;
+        }
+
+        .threeletters {
+            letter-spacing: 0.2em;
+        }
+
+        .fourletters {
+            letter-spacing: 0.5em;
+        }
+
+        .row {
+            height: 5.5em;
+        }
+
+        .playTableClass {
+            border: 1px solid;
+        }
+
+        td {
+            border: 1px solid;
+            width: 6em;
+            height: 3.5em;
+            text-align: center;
+            vertical-align: middle;
+            padding: 0 0 0 0;
+        }
+
+        .column {
+            font-size: 1.6em;
+        }
+
+        .blocked {
+            background-color: green;
+            color:green;
+        }
+
+        .highlighted {
+            background-color: white;
+            border-color: green;
+            border-width: thick;
+            color: black;
+            font: bold;
+        }
+
+        .button {
+          background-color: #04AA6D;
+          border: none;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: grab;
+        }
+
+        .buttonCircle {
+          border-radius: 50%;
+        }
+
+        .button2 {
+          background-color: #04AA6D;
+          border: none;
+          color: white;
+          padding: 18px 13px 18px 13px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 2px 2px;
+          cursor: grab;
+          font-size: 1.4em;
+        }
+
+        #clear{
+            margin-top: 20em;
+            margin-bottom: 2em;
+        }
+
+        .titleClass {
+            width: 50em;
+            margin-left: 0.25em;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script type="application/javascript">
+
+        function getRows() {
+           var selectedRow = $("#rowSelection option:selected").text();
+           return parseInt(selectedRow, 10)
+        }
+        function getCols() {
+           var selectedCol = $("#colSelection option:selected").text();
+           return parseInt(selectedCol, 10);
+        }
+        function getTotalWords() {
+           return getRows() * getCols();
+        }
+        function checkWords() {
+           wordList = $("#words").val().split('\n').filter(Boolean);
+           if (wordList.length >= getTotalWords()) {
+               $('#startGame').prop('disabled', false)
+           } else {
+               $('#startGame').prop('disabled', true)
+           }
+
+        }
+
+        function updateTableCss() {
+           var ratio = [3, 2.5, 2, 1.6, 1.3];
+           var tdWidth = 6 * ratio[getRows() - 1];
+           var tdHeight = 3.5 * ratio[getCols() - 1];
+           var tdFontSize = tdWidth * 0.2;
+           $('td').css('width', tdWidth.toString() + 'em');
+           $('td').css('height', tdWidth.toString() + 'em');
+           $('.column').css('font-size', tdFontSize.toString() + 'em');
+        }
+
+        function shuffle(array) {
+          let currentIndex = array.length;
+
+          // While there remain elements to shuffle...
+          while (currentIndex != 0) {
+
+            // Pick a remaining element...
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+              array[randomIndex], array[currentIndex]];
+          }
+        }
+
+        var stateClasses = ['origin', 'blocked', 'highlighted'];
+
+        $(document).ready(function() {
+           $('#totalWords').text('Please input ' + getTotalWords().toString() + ' words into the list below');
+           checkWords();
+
+           $('#words').on('keyup', function(e) {
+                checkWords();
+           });
+        });
+
+
+       $(document).on('click', "#startGame", function() {
+
+           $('#playArea').empty();
+           wordList = $("#words").val().split('\n').filter(Boolean);
+           if (wordList.length < 1) {
+               return
+           }
+           var table = $('<table id="playTable" class="playTableClass w3-centered"/>');
+           var wordIndex = 0;
+           for (var rowIndex = 0; rowIndex < getRows(); rowIndex++) {
+               var row ='<tr class="row">';
+               for (var colIndex = 0; colIndex < getCols(); colIndex++) {
+                   var currentWord = wordList[wordIndex];
+                   wordIndex++;
+                   if (currentWord.length == 2 || currentWord.length == 1) {
+                        row += '<td class="origin"><div class="column twoletters">' + currentWord + '</div></td>';
+                   } else if (currentWord.length == 3) {
+                        row += '<td class="origin"><div class="column threeletters">' + currentWord + '</div></td>';
+                   } else {
+                        row += '<td class="origin"><div class="column fourletters">' + currentWord + '</div></td>';
+                   }
+               }
+               row += '</tr>';
+               table.append(row)
+           }
+           $('#playArea').append(table);
+           updateTableCss();
+
+
+           $("#contents").show();
+           $("#inputArea").hide();
+
+           $('td').on('click', function(e) {
+               if ($(this).hasClass('origin')) {
+                   $(this).removeClass('origin').addClass('blocked');
+               } else if ($(this).hasClass('blocked')) {
+                   $(this).removeClass('blocked').addClass('highlighted');
+               }
+           });
+       });
+
+       $(document).on('click', "#reset", function() {
+           $("#contents").hide();
+           $("#inputArea").show();
+       });
+
+       $(document).on('click', '#clear', function() {
+           $('td').removeClass('blocked').removeClass('highlighted').addClass('origin');
+           wordList = $("#words").val().split('\n').filter(Boolean);
+           shuffle(wordList);
+           var wordIndex = 0;
+           $('#playTable').find('td').each(function(){
+               $(this).find('div').text(wordList[wordIndex]);
+               wordIndex++;
+            });
+       });
+
+       $(document).on('change', '#rowSelection', function() {
+           $('#totalWords').text('Please input ' + getTotalWords().toString() + ' words into the list below');
+            checkWords();
+       });
+
+       $(document).on('change', '#colSelection', function() {
+           $('#totalWords').text('Please input ' + getTotalWords().toString() + ' words into the list below');
+            checkWords();
+       });
+
+    </script>
+</head>
+<body>
+    <div id="contents" style="display:none" class="contentsClass">
+        <div id="playArea" class="playAreaClass">
+
+        </div>
+        <div id="controlArea" class="controlAreaClass">
+            <button id="clear" name="clear" title="Replay" class="buttonCircle w3-blue button2">Replay</button>
+            <button id="reset" name="reset" title="Reset" class="buttonCircle w3-purple button2">Reset</button>
+        </div>
+
+    </div>
+    <div id="inputArea" class="inputAreaClass">
+        <h1 class="titleClass">Please select the table size:</h1>
+        <div id="tableSize" style="margin-left: 2%">
+            <label for="rowSelection">Rows:</label>
+            <select id="rowSelection" name="rowSelection" class="w3-yellow">
+                <option value="1" selected="selected">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="colSelection" style="margin-left: 5%">Columns:</label>
+            <select id="colSelection" name="colSelection" class="w3-green">
+                <option value="1" selected="selected">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <h1 id="totalWords" class="titleClass">Please input 1 words</h1>
+        <div id="inputList" class="inputListClass">
+            <textarea id="words" name="words" rows="10" cols="60" class="w3-margin"></textarea>
+        </div>
+        <div id="setInput" class="w3-margin">
+            <button id="startGame" name="startGame" class="w3-button w3-black w3-large">Start Game!</button>
+        </div>
+    </div>
+</body>
+</html>
