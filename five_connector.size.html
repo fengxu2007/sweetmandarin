@@ -30,9 +30,16 @@
         }
 
         .titleClass {
-            font-weight: bold;
             font-size: 1.5em;
             margin-bottom: 0.2em;
+        }
+
+        #totalInputWords {
+            margin-left: 2em;
+        }
+
+        .selection {
+            width: 5%
         }
 
         .inputListClass {
@@ -142,6 +149,35 @@
            $('.column').css('font-size', tdFontSize.toString() + 'em');
         }
 
+        function shuffle(array) {
+          let currentIndex = array.length;
+
+          // While there remain elements to shuffle...
+          while (currentIndex != 0) {
+
+            // Pick a remaining element...
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+              array[randomIndex], array[currentIndex]];
+          }
+        }
+
+        function getOneWord(array, total, index) {
+            if (total <= array.length) {
+                return array[index];
+            }
+            random = Math.floor(Math.random() * array.length);
+            return array[random];
+        }
+
+        function checkWords() {
+           wordList = $("#words").val().split('\n').filter(Boolean);
+           $('#totalInputWords').text('You have input ' + wordList.length + ' words');
+        }
+
         var colors = ['w3-yellow', 'w3-green'];
         var currentColor = colors[0];
 
@@ -152,23 +188,22 @@
            if (wordList.length < 1) {
                return
            }
+           shuffle(wordList);
+           var total = getTotalWords();
+           var currentIndex = 0;
            var table = $('<table id="playTable" class="playTableClass w3-centered"/>');
            for (var rowIndex = 0; rowIndex < getRows(); rowIndex++) {
                var row ='<tr class="row">';
-               var lastRandom = -1;
                for (var colIndex = 0; colIndex < getCols(); colIndex++) {
-                   var random = Math.floor(Math.random() * wordList.length);
-                   while (wordList.length >= 2 && lastRandom != -1 && lastRandom == random) {
-                      random = Math.floor(Math.random() * wordList.length);
-                   }
-                   lastRandom = random;
-                   if (wordList[random].length == 2) {
-                        row += '<td><div class="column twoletters">' + wordList[random] + '</div></td>';
-                   } else if (wordList[random].length == 3) {
-                        row += '<td><div class="column threeletters">' + wordList[random] + '</div></td>';
+                   var randomWord = getOneWord(wordList, total, currentIndex);
+                   if (randomWord.length == 2) {
+                        row += '<td><div class="column twoletters">' + randomWord + '</div></td>';
+                   } else if (randomWord.length == 3) {
+                        row += '<td><div class="column threeletters">' + randomWord + '</div></td>';
                    } else {
-                        row += '<td><div class="column fourletters">' + wordList[random] + '</div></td>';
+                        row += '<td><div class="column fourletters">' + randomWord + '</div></td>';
                    }
+                   currentIndex++;
                }
                row += '</tr>';
                table.append(row)
@@ -205,6 +240,13 @@
        $(document).on('click', '#clear', function() {
            currentColor = colors[0];
            $('td').removeClass(colors[0]).removeClass(colors[1]);
+           shuffle(wordList);
+           var total = getTotalWords();
+           var wordIndex = 0;
+           $('#playTable').find('td').each(function(){
+               $(this).find('div').text(getOneWord(wordList, total, wordIndex));
+               wordIndex++;
+            });
        });
 
        $(document).on('change', '#firstColor', function() {
@@ -222,7 +264,9 @@
        });
 
        $(document).ready(function() {
-
+           $('#words').on('keyup', function(e) {
+                checkWords();
+           });
        });
 
     </script>
@@ -242,21 +286,22 @@
     </div>
     <div id="inputArea" class="inputAreaClass">
         <div id="totalWords" class="titleClass">Please select the table size, then input the words into the list below,</div>
-        <div id="tableSize" style="margin-left: 2%">
+        <div id="tableSize" style="margin-left: 2%; width=30%">
             <label for="rowSelection">Rows:</label>
-            <select id="rowSelection" name="rowSelection" class="w3-yellow">
+            <select id="rowSelection" name="rowSelection" class="w3-yellow selection">
                 <option value="5" selected="selected">5</option>
                 <option value="6">6</option>
                 <option value="7">7</option>
                 <option value="8">8</option>
             </select>
             <label for="colSelection" style="margin-left: 5%">Columns:</label>
-            <select id="colSelection" name="colSelection" class="w3-green">
+            <select id="colSelection" name="colSelection" class="w3-green selection">
                 <option value="5" selected="selected">5</option>
                 <option value="6">6</option>
                 <option value="7">7</option>
                 <option value="8">8</option>
             </select>
+            <label id="totalInputWords" class="titleClass"></label>
         </div>
         <div id="inputList" class="inputListClass">
             <textarea id="words" name="words" rows="12" cols="80" class="w3-margin"></textarea>
