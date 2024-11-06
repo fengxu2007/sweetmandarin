@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAT Training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./library.js"></script>
+    <script src="../js/single_choice.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/single_choice.css" />
+</head>
+
+<body>
+<div id="exam">
+    <div id="selectCaption">Please select the correct answer for questions.</div>
+    <div id="playArea">
+    </div>
+    <div id="controlArea">
+        <table id="controlTable">
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="button" value="Submit" class="controlButton" id="Submit"
+                               onclick="submitRequest();"/>
+                        <input type="button" value="Retry" class="controlButton" id="Reset"
+                               onclick="reset();"/>
+                        <input type="button" value="Check Answer" class="controlButton" id="CheckAnswer"
+                               onclick="checkAnswer();"/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div id="result" style="display:none;">
+        <table id="resultTable" class="resultTable">
+            <thead>
+            <tr>
+                <th>Total Number of Questions</th>
+                <th>Success</th>
+                <th>Failure</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><label id="totalNumber"></label></td>
+                <td><label id="successNumber" class="success"></label></td>
+                <td><label id="failureNumber" class="failure"></label></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="display:none">
+        <label>2</label>
+    </div>
+</body>
+</html>

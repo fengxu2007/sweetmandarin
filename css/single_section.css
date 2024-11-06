@@ -1,0 +1,86 @@
+body{
+	background-color: rgb(254,226,234);
+}
+
+.banner{
+	color:darkblue;
+}
+
+#selectCaption{
+	font-family:Comic Sans MS;
+	font-size: 1.5em;
+	color: darkblue;
+}
+
+.sectionControl {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+    display: inline-block
+}
+
+.examTable {
+	width: 85%;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-bottom: 1em;
+	/*background-color:white;*/
+}
+
+.examTable td {
+	font-style: normal;
+	font-size: 20px;
+	text-align: left;
+}
+
+.questionOption {
+    margin-top: 0.4em;
+}
+
+#controlTable {
+    margin-top: 0.5em;
+}
+
+.success {
+	color: green;
+}
+
+.failure {
+	color: red;
+}
+
+.result_mark {
+    width: 1em;
+    display:inline-block;
+}
+
+.paginationLink {
+    display: inline-block;
+    width: 5em;
+    font-size: 1.5em;
+    margin-right: 10em;
+    margin-left: 5em;
+}
+
+.controlButton {
+    width: 10em;
+    margin: 1em;
+    font-size: 1.25em;
+}
+
+.correctOption{
+	color: green;
+	font-size: 20px;
+	font-weight:bold;
+	border-style:solid;
+}
+
+.checkmark {
+      display: inline-block;
+      transform: rotate(45deg);
+      height: 25px;
+      width: 12px;
+      margin-left: 60%;
+      border-bottom: 7px solid #78b13f;
+      border-right: 7px solid #78b13f;
+}
