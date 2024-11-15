@@ -1,6 +1,6 @@
 let total_questions = 0;
 let selected_section_index = 0;
-let cross = '&#10060;'
+let cross = '&#128532;'
 let all_section_names = findSectionsInPool(question_bank.active);
 
 function submitSectionRequest(){

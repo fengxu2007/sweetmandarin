@@ -2,7 +2,7 @@ let current_page = 0;
 let total_questions = 0;
 let default_page_length = 2;
 let selected_section = "Review";
-let cross = '&#10060;'
+let cross = '&#128532;'
 
 function submitRequest(){
 //	$(".correctOption").removeClass('correctOption');

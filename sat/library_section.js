@@ -4,23 +4,23 @@ var question_bank = {
       "tags": {
         "section": "Review"
       },
-      "name": "The car was old and to drive it one needed to accommodate its (   ).",
+      "name": "It was pure ____________, but I didn’t think anyone would study during prom week.",
       "options": [
         {
           "answer": true,
-          "desc": "idiosyncrasies"
+          "desc": "conjecture"
         },
         {
           "answer": false,
-          "desc": "idiosyncracied"
+          "desc": "predilection"
         },
         {
           "answer": false,
-          "desc": "idiosyncratic"
+          "desc": "inception"
         },
         {
           "answer": false,
-          "desc": "idiosyncrasy"
+          "desc": "tumult"
         }
       ]
     },
@@ -28,7 +28,55 @@ var question_bank = {
       "tags": {
         "section": "Review"
       },
-      "name": "The neighborhood had a _____ restaurant scene - 10 new ones had just opened!",
+      "name": "We thought the balloon would expand, but just the opposite happened. It _________.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "contracted"
+        },
+        {
+          "answer": false,
+          "desc": "debilitate"
+        },
+        {
+          "answer": false,
+          "desc": "rescinded"
+        },
+        {
+          "answer": false,
+          "desc": "exhumed"
+        }
+      ]
+    },
+    {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "Instead of pursing a serious career, she occupied herself with more ________ things.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "frivolous"
+        },
+        {
+          "answer": false,
+          "desc": "ungainly"
+        },
+        {
+          "answer": false,
+          "desc": "indifferent"
+        },
+        {
+          "answer": false,
+          "desc": "dismiss"
+        }
+      ]
+    },
+    {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "Our city has a ________ theater scene – there seems to be one opening every week!",
       "options": [
         {
           "answer": true,
@@ -36,15 +84,15 @@ var question_bank = {
         },
         {
           "answer": false,
-          "desc": "burgeon"
+          "desc": "provincial"
         },
         {
           "answer": false,
-          "desc": "burgeoned"
+          "desc": "ephemeral"
         },
         {
           "answer": false,
-          "desc": "burgeon"
+          "desc": "gratuitous"
         }
       ]
     },
@@ -52,19 +100,67 @@ var question_bank = {
       "tags": {
         "section": "Review"
       },
-      "name": "Although the entrees cost about $80 apiece, the restaurant itself was not ______.",
+      "name": "He enjoyed a(n) ________ variety of music – everything from jazz to techno.",
       "options": [
         {
           "answer": true,
-          "desc": "pretentious"
+          "desc": "eclectic"
         },
         {
           "answer": false,
-          "desc": "provincial"
+          "desc": "exotic"
         },
         {
           "answer": false,
-          "desc": "pretenting"
+          "desc": "dupe"
+        },
+        {
+          "answer": false,
+          "desc": "desultory"
+        }
+      ]
+    },
+    {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "She had several ____________, weird habits that nobody understood. ",
+      "options": [
+        {
+          "answer": true,
+          "desc": "idiosyncratic"
+        },
+        {
+          "answer": false,
+          "desc": "predilection"
+        },
+        {
+          "answer": false,
+          "desc": "idiosyncrasies"
+        },
+        {
+          "answer": false,
+          "desc": "penchant"
+        }
+      ]
+    },
+    {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "Times Square is the scene of much __________ and festivity on New Year’s Eve.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "tumult"
+        },
+        {
+          "answer": false,
+          "desc": "ephemeral"
+        },
+        {
+          "answer": false,
+          "desc": "sanction"
         },
         {
           "answer": false,
@@ -74,53 +170,316 @@ var question_bank = {
     },
     {
       "tags": {
-        "section": "Fruit"
+        "section": "Review"
       },
-      "name": "I like (   ).",
+      "name": "The car was too fancy and ____________. It made the driver seem like a snob.",
       "options": [
         {
           "answer": true,
-          "desc": "apple"
+          "desc": "pretentious"
         },
         {
           "answer": false,
-          "desc": "grape"
+          "desc": "ornate"
         },
         {
           "answer": false,
-          "desc": "melon"
+          "desc": "frivolous"
         },
         {
           "answer": false,
-          "desc": "banana"
+          "desc": "exotic"
         }
       ]
     },
-    {
+   {
       "tags": {
-        "section": "City"
+        "section": "Review"
       },
-      "name": "I like (   ).",
+      "name": "His _________ comments contributed nothing and only wasted time. ",
       "options": [
         {
           "answer": true,
-          "desc": "New York"
+          "desc": "gratuitous"
         },
         {
           "answer": false,
-          "desc": "Tokyo"
+          "desc": "discursive"
         },
         {
           "answer": false,
-          "desc": "Beijing"
+          "desc": "indifferent"
         },
         {
           "answer": false,
-          "desc": "London"
+          "desc": "squalor"
         }
       ]
-    }
-
+    },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "The company will _________ your employment offer if you behave badly.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "rescind"
+        },
+        {
+          "answer": false,
+          "desc": "abhor"
+        },
+        {
+          "answer": false,
+          "desc": "refute"
+        },
+        {
+          "answer": false,
+          "desc": "supersede"
+        }
+      ]
+    },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "After a 16-hour day, I returned home fully ________.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "enervated"
+        },
+        {
+          "answer": false,
+          "desc": "exploited"
+        },
+        {
+          "answer": false,
+          "desc": "assail"
+        },
+        {
+          "answer": false,
+          "desc": "debilitated"
+        }
+      ]
+    },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "After the severe earthquake, there was a ____ of car alarms.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "din"
+        },
+        {
+          "answer": false,
+          "desc": "supersede"
+        },
+        {
+          "answer": false,
+          "desc": "tumult"
+        },
+        {
+          "answer": false,
+          "desc": "replete"
+        }
+      ]
+    },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "The car was old and to drive it one needed to accommodate its ____________.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "idiosyncrasies"
+        },
+        {
+          "answer": false,
+          "desc": "idiosyncratic"
+        },
+        {
+          "answer": false,
+          "desc": "characteristics"
+        },
+        {
+          "answer": false,
+          "desc": "qualities"
+        }
+      ]
+    },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "Although the entrees cost about $80 apiece, the restaurant itself was not ________.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "pretentious"
+        },
+        {
+          "answer": false,
+          "desc": "expensive"
+        },
+        {
+          "answer": false,
+          "desc": "extravagant"
+        },
+        {
+          "answer": false,
+          "desc": "luxurious"
+        }
+      ]
+    },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "The lawyer violated the ethics code, and the judge _________ him.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "reproved"
+        },
+        {
+          "answer": false,
+          "desc": "rewarded"
+        },
+        {
+          "answer": false,
+          "desc": "ignored"
+        },
+        {
+          "answer": false,
+          "desc": "pardoned"
+        }
+      ]
+    },
+  {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "He didn’t want to ________ the mainstream voters, so he moderated his views. ",
+      "options": [
+        {
+          "answer": true,
+          "desc": "alienate"
+        },
+        {
+          "answer": false,
+          "desc": "attract"
+        },
+        {
+          "answer": false,
+          "desc": "appease"
+        },
+        {
+          "answer": false,
+          "desc": "impress"
+        }
+      ]
+    },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "The book is ____________ with historical references. There is one on every page.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "replete"
+        },
+        {
+          "answer": false,
+          "desc": "lacking"
+        },
+        {
+          "answer": false,
+          "desc": "devoid"
+        },
+        {
+          "answer": false,
+          "desc": "sparse"
+        }
+      ]
+    },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "Her home includes a varied and __________ mix of art.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "eclectic"
+        },
+        {
+          "answer": false,
+          "desc": "tasteful"
+        },
+        {
+          "answer": false,
+          "desc": "modest"
+        },
+        {
+          "answer": false,
+          "desc": "pretentious"
+        }
+      ]
+   },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "She has been CEO since the company’s ___________ two years ago.",
+      "options": [
+        {
+          "answer": true,
+          "desc": "inception"
+        },
+        {
+          "answer": false,
+          "desc": "termination"
+        },
+        {
+          "answer": false,
+          "desc": "expansion"
+        },
+        {
+          "answer": false,
+          "desc": "acquisition"
+        }
+      ]
+   },
+   {
+      "tags": {
+        "section": "Review"
+      },
+      "name": "There is a(n) _________ beauty to the butterfly, who lives for only a short time. ",
+      "options": [
+        {
+          "answer": true,
+          "desc": "ephemeral"
+        },
+        {
+          "answer": false,
+          "desc": "enduring"
+        },
+        {
+          "answer": false,
+          "desc": "eternal"
+        },
+        {
+          "answer": false,
+          "desc": "everlasting"
+        }
+      ]
+   }
   ],
   "inactive": []
 };

@@ -14,25 +14,6 @@
     <div id="selectCaption">Please select the correct answer for questions.</div>
     <div id="playArea">
     </div>
-    <div id="controlArea">
-        <table id="controlTable">
-            <tbody>
-                <tr>
-                    <td>
-                        <input type="button" value="Submit" class="controlButton" id="Submit"
-                               onclick="submitRequest();"/>
-                        <input type="button" value="Retry" class="controlButton" id="Reset"
-                               onclick="reset();"/>
-                        <input type="button" value="Check Answer" class="controlButton" id="CheckAnswer"
-                               onclick="checkAnswer();"/>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-
     <div id="result" style="display:none;">
         <table id="resultTable" class="resultTable">
             <thead>
@@ -51,8 +32,24 @@
             </tbody>
         </table>
     </div>
-    <div style="display:none">
-        <label>2</label>
+
+    <div id="controlArea">
+        <table id="controlTable">
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="button" value="Submit" class="controlButton" id="Submit"
+                               onclick="submitRequest();"/>
+                        <input type="button" value="Retry" class="controlButton" id="Reset"
+                               onclick="reset();"/>
+                        <input type="button" value="Check Answer" class="controlButton" id="CheckAnswer"
+                               onclick="checkAnswer();"/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
 </body>
 </html>

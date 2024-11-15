@@ -1,5 +1,5 @@
 body{
-	background-color: rgb(254,226,234);
+	background-color: #e7f2d4;
 }
 
 .banner{
@@ -47,6 +47,10 @@ body{
 
 .failure {
 	color: red;
+}
+
+#result {
+    margin-left: 2em;
 }
 
 .result_mark {
