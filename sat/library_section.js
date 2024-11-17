@@ -124,30 +124,6 @@ var question_bank = {
       "tags": {
         "section": "Review"
       },
-      "name": "She had several ____________, weird habits that nobody understood. ",
-      "options": [
-        {
-          "answer": true,
-          "desc": "idiosyncratic"
-        },
-        {
-          "answer": false,
-          "desc": "predilection"
-        },
-        {
-          "answer": false,
-          "desc": "idiosyncrasies"
-        },
-        {
-          "answer": false,
-          "desc": "penchant"
-        }
-      ]
-    },
-    {
-      "tags": {
-        "section": "Review"
-      },
       "name": "Times Square is the scene of much __________ and festivity on New Year’s Eve.",
       "options": [
         {
@@ -180,19 +156,19 @@ var question_bank = {
         },
         {
           "answer": false,
-          "desc": "ornate"
-        },
-        {
-          "answer": false,
           "desc": "frivolous"
         },
         {
           "answer": false,
-          "desc": "exotic"
+          "desc": "gratuitous"
+        },
+        {
+          "answer": false,
+          "desc": "voluminous"
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -216,7 +192,7 @@ var question_bank = {
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -240,7 +216,7 @@ var question_bank = {
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -264,7 +240,7 @@ var question_bank = {
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -288,7 +264,7 @@ var question_bank = {
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -312,7 +288,7 @@ var question_bank = {
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -336,7 +312,7 @@ var question_bank = {
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -344,7 +320,7 @@ var question_bank = {
       "options": [
         {
           "answer": true,
-          "desc": "reproved"
+          "desc": "sanctioned"
         },
         {
           "answer": false,
@@ -360,7 +336,7 @@ var question_bank = {
         }
       ]
     },
-  {
+    {
       "tags": {
         "section": "Review"
       },
@@ -384,7 +360,7 @@ var question_bank = {
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -408,7 +384,7 @@ var question_bank = {
         }
       ]
     },
-   {
+    {
       "tags": {
         "section": "Review"
       },
@@ -420,19 +396,19 @@ var question_bank = {
         },
         {
           "answer": false,
-          "desc": "tasteful"
+          "desc": "monotonous"
         },
         {
           "answer": false,
-          "desc": "modest"
+          "desc": "rudimentary"
         },
         {
           "answer": false,
-          "desc": "pretentious"
+          "desc": "provincial"
         }
       ]
-   },
-   {
+    },
+    {
       "tags": {
         "section": "Review"
       },
@@ -448,15 +424,15 @@ var question_bank = {
         },
         {
           "answer": false,
-          "desc": "expansion"
+          "desc": "sanction"
         },
         {
           "answer": false,
-          "desc": "acquisition"
+          "desc": "fabrication"
         }
       ]
-   },
-   {
+    },
+    {
       "tags": {
         "section": "Review"
       },
@@ -479,7 +455,7 @@ var question_bank = {
           "desc": "everlasting"
         }
       ]
-   }
-  ],
+    }
+   ],
   "inactive": []
 };
